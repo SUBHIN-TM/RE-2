@@ -1,34 +1,26 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
 
-//!REACT ELEMENT
-// const heading= React.createElement("div",{id:"trys"},"welcome by parcel") [without jsx creating component]
-const jsxHeading=<h1 id="trys" className="classgiven">weclome using jsx</h1>
-//*babel is compling this code to react for understandable jsx            
-// const root=ReactDOM.createRoot(document.getElementById("root"))
-// root.render(jsxHeading)
-
-
-
+const numbers=1000;
 //!REACT COMPONENT = 1.FUNCTIONAL COMPONENT
-const Heading =() => <h1>displaying by functional component</h1>
-const root=ReactDOM.createRoot(document.getElementById("root"))
- root.render(<Heading/>) //this is how functional component render
-
-
  //!put inside the components CALLED AS= [COMPONENT COMPOSITION]
  const MainHeading=() => <h1>component composition</h1>
-//  const BodyToDisplay =() => { return(
-//     <div>
-//         <MainHeading/>
-//         <p>DONE</p>
-//     </div>
-//  )}
-
  //*WITHOUT RETURN REMOVE CURLY DIRECT WRITE INSIDE PARENTHESIS
+ const reactElement=<p>react element</p> //react element
  const BodyToDisplay =() => (
     <div>
+        {/*COMPONENT CAN CALL COMPONENT INSIDE BY JUST TAGS AND CLOSE METHOD 1 */}
         <MainHeading/>
+
+         {/*COMPONENT CAN CALL COMPONENT INSIDE BY CALLING FUCTION NAME METHOD 2*/}
+         {MainHeading()}
+
+         {/* ELEMENT CAN CALL INSIDE COMPOINET BY JUST INSIDE CURLY BRACES LIKE HJS CODE */}
+        {reactElement}
+        
+        {/* BY PUTTING INSIDE CURLY WE CAN WRITE JS CODE */}
+        {numbers} 
+        <h1>{console.log("writed through log")}</h1>
         <p>DONE</p>
     </div>
  )
